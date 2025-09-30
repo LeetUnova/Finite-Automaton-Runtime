@@ -1,0 +1,32 @@
+append alphabet 0
+append alphabet 1
+append states q1
+append states q2
+append states q3
+append states q4
+set initialstate q1
+append finalstates q2
+append finalstates q3
+append finalstates q4
+
+define delta
+    define state q1
+        if input 1 then set state q2
+        if input 0 then set state q4
+    end state
+
+    define state q2
+        if input 1 then set state q2
+        if input 0 then set state q3
+    end state
+
+    define state q3
+        if input 1 then set state q2
+        if input 0 then set state q3
+    end state
+
+    define state q4
+        if input 1 then set state q4
+        if input 0 then set state q4
+    end state
+end delta
